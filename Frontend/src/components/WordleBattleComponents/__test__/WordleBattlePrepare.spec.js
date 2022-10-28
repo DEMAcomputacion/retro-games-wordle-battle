@@ -21,7 +21,8 @@ describe('Comprueba los elementos de la Pagina', () => {
     })
     it('comprueba que exista la imagen de copiar', () => {
         rend()
-        expect(screen.getByRole('img', 'copy-icon')).toBeInTheDocument()
+        const ico = screen.getByRole("img");
+        expect(ico).toHaveAttribute("src", "copy-icon.png");
     })
     it('Comprueba que exista el boton Invitar', () => {
         rend()

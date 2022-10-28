@@ -4,6 +4,9 @@ import React from "react";
 import Row from "../Row";
 
 export default function Grid({ guesses, currentGuess, turn }) {
+  console.log("gueses: ", guesses)
+  console.log("currentGuess: ", currentGuess)
+  console.log("turn: ", turn)
   return (
     <div>
       {guesses.map((g, i) => {
