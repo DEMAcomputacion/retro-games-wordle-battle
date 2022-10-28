@@ -12,7 +12,7 @@ import "./index.css";
 import PageTitle from "../../PageTitle/index.jsx";
 
 function WordleBattle() {
-  const location = useLocation();
+  //const location = useLocation();
   const [turn, setTurn] = useState(0);
   const [remotePlay, setRemotePlay] = useState([...Array(6)]);
   const [gameOver, setGameOver] = useState(false);
@@ -53,9 +53,9 @@ function WordleBattle() {
   }, [handleKeyup]);
 
   useEffect(() => {
-    client.emit("newPlay", location.state.opponent, guesses, (res) => {
-      console.log(res.status);
-    });
+//    client.emit("newPlay", location.state.opponent, guesses, (res) => {
+//      console.log(res.status);
+//    });
     if (isCorrect) {
       client.emit("gameEnded", (res) => {
         console.log(res.status);

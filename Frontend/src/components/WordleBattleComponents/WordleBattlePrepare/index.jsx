@@ -5,7 +5,7 @@ import { client } from "../SocketIo/index.js";
 import "./index.css";
 
 function WordleBattlePrepare() {
-  const navigate = useNavigate();
+  //  const navigate = useNavigate();
   const [myId, setMyId] = useState("");
   const [opponent, setOpponent] = useState("");
   const [state, setState] = useState("");
@@ -24,7 +24,7 @@ function WordleBattlePrepare() {
 
     if (Boolean(client.id)) {
       setMyId(client.id);
-    } else{
+    } else {
       client.connect();
       client.on("connect", () => {
         console.log("conectado!");
@@ -71,9 +71,9 @@ function WordleBattlePrepare() {
   };
 
   const startGame = (opponent2) => {
-    navigate("/wordle-battle/game", {
-      state: { id: myId, opponent, opponent2 },
-    });
+        navigate("/wordle-battle/game", {
+          state: { id: myId, opponent, opponent2 },
+        });
   };
 
   const copyIdToClipboard = () => {
@@ -120,12 +120,14 @@ function WordleBattlePrepare() {
               className="inputIdContrincante"
               onChange={saveOpponentId}
               type="text"
+              aria-label="idContrincante"
             />
             <input
               type="submit"
               className="buttonIdContrincante"
               id="enviador"
               value="INVITAR"
+              aria-label="invitar"
             />
           </form>
         </div>
